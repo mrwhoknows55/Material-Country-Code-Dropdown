@@ -2,10 +2,8 @@ package com.mrwhoknows.customspinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
+
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initList();
-        AutoCompleteTextView spinner = findViewById(R.id.spinner);
+        AutoCompleteTextView spinner =  findViewById(R.id.spinner);
 
         CountryAdapter mAdapter = new CountryAdapter(this, countryCodesList);
 
         spinner.setAdapter(mAdapter);
+        spinner.setDropDownHeight(800);
+        //    TODO : Add OnItemClick methods to spinner
 
 
     }
-
-//    TODO : Add OnItemClick methods to spinner
 
     private void  initList() {
 
